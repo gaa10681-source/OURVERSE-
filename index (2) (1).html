@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OURVERSE — Anniversary Edition</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Atmospheric System Layers -->
+    <div id="particleLayer" aria-hidden="true">
+        <div class="sun"></div>
+        <div class="moon"></div>
+    </div>
+    <!-- Floating Navigation & Utility Control Bar -->
+    <nav class="system-controls" aria-label="Quick Navigation Controls">
+        </button>
+        <button id="musicBtn" class="music-btn off" aria-label="Toggle Background Music" aria-pressed="false" title="Play Music">
+            🎵
+        </button>
+    </nav>
+    <!-- Hidden Master Audio Loop Anchor -->
+    <audio id="bgMusic" loop preload="auto">
+        <source src="https://ia600804.us.archive.org/23/items/love_20260211/Love.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <!-- Main Dynamic Application Window Shell -->
+    <main class="shell">
+        
+        <!-- =========================================
+             PHASE 1: COUNTDOWN & SYSTEM GATEWAY CARD
+        ========================================= -->
+        <article class="card" id="mainCard">
+            <div class="brand-badge">OURVERSE</div>
+            <h1>Forever Starts Again ❤️</h1>
+            <p class="message" id="mainMessage">
+                Some stories are written on paper...<br><br>
+                Ours was written in memories, laughter, tears, and love.<br><br>
+                Our next chapter begins when time allows it.
+            </p>
+            <!-- Grid Countdown Clock System Components -->
+            <div class="countdown" id="countdown" aria-label="Time Remaining Until Reveal Anniversary Clock">
+                <div class="time-box">
+                    <span id="days">00</span>
+                    <small>Days</small>
+                </div>
+                <div class="time-box">
+                    <span id="hours">00</span>
+                    <small>Hours</small>
+                </div>
+                <div class="time-box">
+                    <span id="minutes">00</span>
+                    <small>Minutes</small>
+                </div>
+                <div class="time-box">
+                    <span id="seconds">00</span>
+                    <small>Seconds</small>
+                </div>
+            </div>
+            <!-- Lock and Verification State Status Text -->
+            <div class="status" id="statusText">🔒 Waiting...</div>
+            <!-- Context Input Action Container Area -->
+            <div class="action-area">
+                <!-- Gateway Entry CTA Trigger Link Element (Hidden Until Target Point Reached) -->
+                <button id="enterBtn" class="primary-btn" hidden>
+                    Begin Our Journey ❤️
+                </button>
+                <!-- Vault Decryption Password Box Interface (Revealed Via JavaScript Lifecycle) -->
+                <div id="passwordBox" class="password-box" hidden>
+                    <p class="password-title">💌 A Little Surprise Awaits</p>
+                    
+                    <input 
+                        id="pwInput" 
+                        type="password" 
+                        placeholder="Type the thing you convinced me about..." 
+                        autocomplete="off"
+                        aria-label="Secret Passcode Challenge Input"
+                    />
+                    
+                    <button id="pwBtn" class="primary-btn small">
+                        Let's Begin ✨
+                    </button>
+                    
+                    <p id="pwError" class="error-text" aria-live="polite"></p>
+                </div>
+            </div>
+            <!-- Footer Meta Anchors -->
+            <footer class="footer-note" id="footerNote">
+                <p>✨ Every second brings us closer to our day.</p>
+                <p><time datetime="2026-07-15T00:00"><strong>15 July 2026 • 12:00 AM</strong></time></p>
+            </footer>
+        </article>
+        <!-- =========================================
+             PHASE 2: OURVERSE MAIN CENTRAL HUB PANEL
+        ========================================= -->
+        <section id="loveHub" class="love-hub sub-panel" hidden>
+            <div class="hub-header">
+                <h2 id="greeting">Good Evening ❤️</h2>
+                <p class="hub-date">
+                    Happy Anniversary, ࣪ ִֶָ☾. 𝐂𝐇𝐀𝐍𝐃 ❀
+                    <br>
+                    <strong>15 July 2026</strong>
+                </p>
+            </div>
+            <!-- Enhanced Together Metrics Matrix Card -->
+            <div class="together-card glass-card">
+                <h3>💕 Our Eternal Journey</h3>
+                
+                <!-- Row 1: Cumulative Grand Totals -->
+                <div class="together-title-sub">Grand Totals Together:</div>
+                <div class="together-grid global-totals">
+                    <div>
+                        <span id="yearsTogetherTotal">2</span>
+                        <small>Years</small>
+                    </div>
+                    <div>
+                        <span id="monthsTogetherTotal">24</span>
+                        <small>Months</small>
+                    </div>
+                    <div>
+                        <span id="daysTogetherTotal">730</span>
+                        <small>Days</small>
+                    </div>
+                </div>
+                <div class="together-grid global-totals sub-totals">
+                    <div>
+                        <span id="hoursTogetherTotal">17520</span>
+                        <small>Hours</small>
+                    </div>
+                    <div>
+                        <span id="minutesTogetherTotal">1051200</span>
+                        <small>Minutes</small>
+                    </div>
+                    <div>
+                        <span id="secondsTogetherTotal">63072000</span>
+                        <small>Seconds</small>
+                    </div>
+                </div>
+                <hr class="together-divider">
+                <!-- Row 2: Live Precise Relentless Countdown Counter -->
+                <div class="together-title-sub">✨ Time We Are Staying Together (Live):</div>
+                <div class="together-grid live-counter">
+                    <div>
+                        <span id="liveDays">00</span>
+                        <small>Days</small>
+                    </div>
+                    <div>
+                        <span id="liveHours">00</span>
+                        <small>Hours</small>
+                    </div>
+                    <div>
+                        <span id="liveMinutes">00</span>
+                        <small>Minutes</small>
+                    </div>
+                    <div>
+                        <span id="liveSeconds">00</span>
+                        <small>Seconds</small>
+                    </div>
+                </div>
+            </div>
+            <!-- Navigation Matrix Core Link Hub Grid Layout Modules -->
+            <div class="hub-grid">
+                <button class="hub-card" data-section="timeline" aria-label="Open Our Journey Timeline View">
+                    <span>📖</span>
+                    <h3>Timeline</h3>
+                    <p>Our Journey</p>
+                </button>
+                <button class="hub-card" data-section="gallery" aria-label="Open Memories Photo Gallery View">
+                    <span>🖼️</span>
+                    <h3>Gallery</h3>
+                    <p>Our Memories</p>
+                </button>
+                <button class="hub-card" data-section="letters" aria-label="Open Archived Heart Letters View">
+                    <span>💌</span>
+                    <h3>Letters</h3>
+                    <p>Read My Heart</p>
+                </button>
+                <button class="hub-card" data-section="games" aria-label="Open Interactive Love Gameroom View">
+                    <span>🎮</span>
+                    <h3>Games</h3>
+                    <p>Play Together</p>
+                </button>
+                <button class="hub-card" data-section="starmap" aria-label="Open Celestial Star Map Canvas View">
+                    <span>🌌</span>
+                    <h3>Star Map</h3>
+                    <p>The Night We Met</p>
+                </button>
+                <button class="hub-card" data-section="surprise" aria-label="Open Digital Secret Box Surprise Reveal View">
+                    <span>🎁</span>
+                    <h3>Surprise</h3>
+                    <p>Open Last</p>
+                </button>
+            </div>
+            <!-- Inspirational Quote Wrapper Box Component -->
+            <div class="quote-card glass-card">
+                <p id="dailyQuote">"You are still my favorite notification."</p>
+            </div>
+        </section>
+        <!-- =========================================
+             PHASE 3: DETAILED TIMELINE WRAPPER SECTION
+        ========================================= -->
+        <section id="timelineSection" class="timeline-section sub-panel" hidden>
+            <div class="section-header">
+                <button class="back-btn back-to-hub" id="backFromTimeline">← Back</button>
+                <h2>📖 Our Journey</h2>
+                <p>Every beautiful memory deserves its own place.</p>
+            </div>
+            <!-- Full Linear Romantic Path Layout Grid Block Elements -->
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-date"/span>First Meet - 16/05/2024</span>
+                        <h3>❤️ The Day Distance Met Destiny ✨</h3>
+                        <p>The exact moment our paths crossed among millions of possibilities. Even from miles apart, something about you made the world feel warmer, brighter, and finally real. Distance may separate our hands, but it never stood a chance against what our hearts found in each other. Out of everyone, somehow, we found us—and that's still my favorite miracle.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-date">First Crush - Debalina</span>
+                        <h3>💖 The First Person My Heart Chose ✨</h3>
+                        <p>You were my first crush—the first person who made my heart race for no reason, the first name that stayed on my mind a little longer than it should, and the first smile I never got tired of seeing. They say you never forget your first crush, and now I know why. It wasn't just the beginning of a feeling; it was the beginning of us. Out of everyone in this world, you became my very first crush—and even after all this time, my heart is still choosing you, every single day. ❤️🌍</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-date">First Page of Forever  - 01/01/2026</span>
+                        <h3>🌹 🌙 The Chapter Where I Changed ♾️</h3>
+                        <p>This was the moment I truly understood what you mean to me. I realized my mistakes, and from then on, I wanted to make everything right. I'm deeply sorry for the times I hurt you, and I'm endlessly grateful for your patience, your love, and every effort you made to stay. From this page forward, my heart chooses only you. I promise to stand by your side, cherish you, and never let go. Here's to writing the rest of our forever—together. ❤️</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-date">Today</span>
+                        <h3>💖 The Anniversary Milestone</h3>
+                        <p>Two years ago, we began writing a story that distance could never erase. We've laughed, cried, waited, grown, forgiven, and loved through every moment. Thank you for never giving up on us, for standing beside me even when it wasn't easy, and for loving me despite my imperfections. Every day with you has been a blessing, and every tomorrow is another chance to love you even more. Happy 2nd Anniversary, my Debalina. ❤️🌍✨</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- =========================================
+             PHASE 4: EXPANDED MEMORY GALLERY SECTION
+        ========================================= -->
+        <section id="gallerySection" class="gallery-section sub-panel" hidden>
+            <div class="section-header">
+                <button class="back-btn back-to-hub" id="backFromGallery">← Back</button>
+                <h2>🖼 Our Memories</h2>
+                <p>Every picture tells a piece of our story.</p>
+            </div>
+            <!-- Grid Items Framework Built Out Explicitly for Media Anchors -->
+            <div class="gallery-grid">
+
+    <div class="gallery-card" data-photo="1" role="button" tabindex="0">
+        <img src="https://i.ibb.co/d0X0sXXL/IMG-20260704-164544.png" alt="Always Us">
+        <div class="gallery-overlay">
+            <h3>Always Us ❤️</h3>
+            <p>Tap to open</p>
+        </div>
+    </div>
+
+    <div class="gallery-card" data-photo="2" role="button" tabindex="0">
+        <img src="https://i.ibb.co/XxyVgDHx/file-00000000d4147208944d2baa174abd6a.png" alt="Our Day">
+        <div class="gallery-overlay">
+            <h3>Our Day 🌸</h3>
+            <p>Tap to open</p>
+        </div>
+    </div>
+
+    <div class="gallery-card" data-photo="3" role="button" tabindex="0">
+        <img src="https://i.ibb.co/mV17SQhd/IMG-20260630-131910-166.jpg" alt="My Beautiful Dream">
+        <div class="gallery-overlay">
+            <h3>My Beautiful Dream 💕</h3>
+            <p>Tap to open</p>
+        </div>
+    </div>
+
+    <div class="gallery-card" data-photo="4" role="button" tabindex="0">
+        <img src="https://i.ibb.co/MD0YZfht/file-0000000072c87209b4e8dbfbaba40c6a.png" alt="Forever">
+        <div class="gallery-overlay">
+            <h3>Forever ❤️</h3>
+            <p>Tap to open</p>
+        </div>
+    </div>
+
+</div>
+        </section>
+        <!-- Immersive Portal Layer Lightbox Photo Viewer Overlays -->
+        <div id="photoViewer" class="photo-viewer" hidden role="dialog" aria-modal="true" aria-labelledby="viewerCaption">
+    <button id="closeViewer" class="viewer-close" aria-label="Close">✕</button>
+
+    <img id="viewerImage" src="" alt="Memory">
+    
+    <button id="viewerBackBtn" class="viewer-back-btn">
+    ← Back
+</button>
+
+    <p id="viewerCaption">Beautiful Memory ❤️</p>
+</div>
+        <!-- =========================================
+             PHASE 5: HEART WRITTEN LETTERS ARCHIVE
+        ========================================= -->
+        <section id="lettersSection" class="letters-section sub-panel" hidden>
+            <div class="section-header">
+                <button class="back-btn back-to-hub" id="backFromLetters">← Back</button>
+                <h2>💌 Letters From My Heart</h2>
+                <p>Every letter holds a piece of my soul.</p>
+            </div>
+            <!-- Completely Exploded and Unique Document Cards Grid System -->
+            <div class="letters-grid">
+                <div class="letter-card" data-letter="1" role="button" tabindex="0" aria-label="Read Chapter 1 Letter: Open Me First">
+                    <div class="letter-icon">💖</div>
+                    <h3>Open Me First</h3>
+                    <p>A gentle reflection looking back onto the initial spark that remade my entire world view.</p>
+                </div>
+                <div class="letter-card" data-letter="2" role="button" tabindex="0" aria-label="Read Chapter 2 Letter: When You Smile">
+                    <div class="letter-icon">🌸</div>
+                    <h3>When You Smile</h3>
+                    <p>An honest record describing the quiet, unexpected tiny habits that instantly make me fall for you daily.</p>
+                </div>
+                <div class="letter-card" data-letter="3" role="button" tabindex="0" aria-label="Read Chapter 3 Letter: Thank You">
+                    <div class="letter-icon">🫶</div>
+                    <h3>Thank You</h3>
+                    <p>A letter dedicated purely to gratitude for your endless warmth, your grace, and your infinite patience.</p>
+                </div>
+                <div class="letter-card" data-letter="4" role="button" tabindex="0" aria-label="Read Chapter 4 Letter: Forever Promise">
+                    <div class="letter-icon">❤️</div>
+                    <h3>Forever</h3>
+                    <p>The final, unbreakable love promise dedicated exclusively to all the unwritten days ahead of us.</p>
+                </div>
+            </div>
+        </section>
+        <!-- Unique Handcrafted Classic Paper Letter Interface Modal -->
+        <div id="letterViewer" class="media-viewer" hidden role="dialog" aria-modal="true" aria-labelledby="letterTitle">
+            <article class="letter-paper">
+                <button id="closeLetter" class="letter-back-btn" aria-label="Close Letter and Go Back">← Back to Letters</button>
+                <h2 id="letterTitle">My Letter Header</h2>
+                <div id="letterContent">Deep expressions of romantic text assets write out explicitly inside this viewport canvas wrapper container node area...</div>
+            </article>
+        </div>
+        <!-- =========================================
+             PHASE 6: INTERACTIVE LOVE GAMEROOM HUB
+        ========================================= -->
+        <section id="gamesSection" class="games-section sub-panel" hidden>
+          
+          <!-- START OF SLIDING PUZZLE GAME ADDITION -->
+          
+<div class="puzzle-game-wrapper">
+    <!-- Level Selector View -->
+    <div id="puzzleLevelSelector" class="puzzle-view active">
+        <h2 class="puzzle-main-title">✨ Memory Sliding Puzzles ✨</h2>
+        <p class="puzzle-subtitle">Solve each memory puzzle to reconstruct our happiest moments.</p>
+        
+        <div class="puzzle-level-grid">
+            <!-- Level 1 (Easy 3x3) -->
+            <button class="level-card locked" id="btn-level-1" data-level="1">
+                <span class="level-badge easy">Easy</span>
+                <div class="level-thumb-container">
+                    <div class="level-lock-icon">🔒</div>
+                    <img src="https://i.ibb.co/G4PBjzyQ/IMG-20260227-132824-759.jpg" alt="Level 1" class="level-thumb" loading="lazy">
+                </div>
+                <div class="level-info">
+                    <span class="level-name">Level 1: First Smile</span>
+                    <div class="level-stars" id="stars-level-1">☆☆☆</div>
+                    <div class="level-best" id="best-level-1">Best: --</div>
+                </div>
+            </button>
+
+            <!-- Level 2 (Easy 3x3) -->
+            <button class="level-card locked" id="btn-level-2" data-level="2">
+                <span class="level-badge easy">Easy</span>
+                <div class="level-thumb-container">
+                    <div class="level-lock-icon">🔒</div>
+                    <img src="https://i.ibb.co/mV17SQhd/IMG-20260630-131910-166.jpg" alt="Level 2" class="level-thumb" loading="lazy">
+                </div>
+                <div class="level-info">
+                    <span class="level-name">Level 2: Our Warmth</span>
+                    <div class="level-stars" id="stars-level-2">☆☆☆</div>
+                    <div class="level-best" id="best-level-2">Best: --</div>
+                </div>
+            </button>
+
+            <!-- Level 3 (Easy 3x3) -->
+            <button class="level-card locked" id="btn-level-3" data-level="3">
+                <span class="level-badge easy">Easy</span>
+                <div class="level-thumb-container">
+                    <div class="level-lock-icon">🔒</div>
+                    <img src="https://i.ibb.co/G4PBjzyQ/IMG-20260227-132824-759.jpg" alt="Level 3" class="level-thumb" loading="lazy">
+                </div>
+                <div class="level-info">
+                    <span class="level-name">Level 3: Happy Gaze</span>
+                    <div class="level-stars" id="stars-level-3">☆☆☆</div>
+                    <div class="level-best" id="best-level-3">Best: --</div>
+                </div>
+            </button>
+
+            <!-- Level 4 (Medium 4x4) -->
+            <button class="level-card locked" id="btn-level-4" data-level="4">
+                <span class="level-badge medium">Medium</span>
+                <div class="level-thumb-container">
+                    <div class="level-lock-icon">🔒</div>
+                    <img src="https://i.ibb.co/XxyVgDHx/file-00000000d4147208944d2baa174abd6a.png" alt="Level 4" class="level-thumb" loading="lazy">
+                </div>
+                <div class="level-info">
+                    <span class="level-name">Level 4: Little Hugs</span>
+                    <div class="level-stars" id="stars-level-4">☆☆☆</div>
+                    <div class="level-best" id="best-level-4">Best: --</div>
+                </div>
+            </button>
+
+            <!-- Level 5 (Medium 4x4) -->
+            <button class="level-card locked" id="btn-level-5" data-level="5">
+                <span class="level-badge medium">Medium</span>
+                <div class="level-thumb-container">
+                    <div class="level-lock-icon">🔒</div>
+                    <img src="https://i.ibb.co/9kwTg7vr/photo-collage-png-1.png" alt="Level 5" class="level-thumb" loading="lazy">
+                </div>
+                <div class="level-info">
+                    <span class="level-name">Level 5: Collage of Us</span>
+                    <div class="level-stars" id="stars-level-5">☆☆☆</div>
+                    <div class="level-best" id="best-level-5">Best: --</div>
+                </div>
+            </button>
+
+            <!-- Level 6 (Medium 4x4) -->
+            <button class="level-card locked" id="btn-level-6" data-level="6">
+                <span class="level-badge medium">Medium</span>
+                <div class="level-thumb-container">
+                    <div class="level-lock-icon">🔒</div>
+                    <img src="https://i.ibb.co/DD8v2Dy1/IMG-20260328-180313-726.jpg" alt="Level 6" class="level-thumb" loading="lazy">
+                </div>
+                <div class="level-info">
+                    <span class="level-name">Level 6: Beautiful Day</span>
+                    <div class="level-stars" id="stars-level-6">☆☆☆</div>
+                    <div class="level-best" id="best-level-6">Best: --</div>
+                </div>
+            </button>
+
+            <!-- Level 7 (Hard 5x5) -->
+            <button class="level-card locked" id="btn-level-7" data-level="7">
+                <span class="level-badge hard">Hard</span>
+                <div class="level-thumb-container">
+                    <div class="level-lock-icon">🔒</div>
+                    <img src="https://i.ibb.co/fzT9s8VZ/IMG-20260522-220343-137.webp" alt="Level 7" class="level-thumb" loading="lazy">
+                </div>
+                <div class="level-info">
+                    <span class="level-name">Level 7: Together Always</span>
+                    <div class="level-stars" id="stars-level-7">☆☆☆</div>
+                    <div class="level-best" id="best-level-7">Best: --</div>
+                </div>
+            </button>
+
+            <!-- Level 8 (Hard 5x5) -->
+            <button class="level-card locked" id="btn-level-8" data-level="8">
+                <span class="level-badge hard">Hard</span>
+                <div class="level-thumb-container">
+                    <div class="level-lock-icon">🔒</div>
+                    <img src="https://i.ibb.co/LXF1J3hw/IMG-20260603-220732-955.webp" alt="Level 8" class="level-thumb" loading="lazy">
+                </div>
+                <div class="level-info">
+                    <span class="level-name">Level 8: Hidden Spark</span>
+                    <div class="level-stars" id="stars-level-8">☆☆☆</div>
+                    <div class="level-best" id="best-level-8">Best: --</div>
+                </div>
+            </button>
+
+            <!-- Level 9 (Hard 5x5) -->
+            <button class="level-card locked" id="btn-level-9" data-level="9">
+                <span class="level-badge hard">Hard</span>
+                <div class="level-thumb-container">
+                    <div class="level-lock-icon">🔒</div>
+                    <img src="https://i.ibb.co/d0X0sXXL/IMG-20260704-164544.png" alt="Level 9" class="level-thumb" loading="lazy">
+                </div>
+                <div class="level-info">
+                    <span class="level-name">Level 9: Our Ultimate Chapter</span>
+                    <div class="level-stars" id="stars-level-9">☆☆☆</div>
+                    <div class="level-best" id="best-level-9">Best: --</div>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <!-- Active Game Panel -->
+    <div id="puzzlePlayground" class="puzzle-view">
+        <div class="playground-header">
+            <button class="puzzle-control-btn back-btn" id="puzzleBackToLevelsBtn">← Back</button>
+            <div class="playground-title-group">
+                <h3 id="currentPlaygroundLevelName" class="playground-level-name">Level</h3>
+                <span id="currentDifficultyBadge" class="difficulty-indicator">Easy</span>
+            </div>
+        </div>
+
+        <!-- Dashboard Panel with Moves, Timer and Best Score -->
+        <div class="puzzle-dashboard">
+            <div class="dashboard-stat">
+                <span class="stat-icon">🕒</span>
+                <div class="stat-texts">
+                    <span class="stat-label">TIME</span>
+                    <span id="puzzleTimerDisplay" class="stat-value">00:00</span>
+                </div>
+            </div>
+            <div class="dashboard-stat">
+                <span class="stat-icon">✨</span>
+                <div class="stat-texts">
+                    <span class="stat-label">MOVES</span>
+                    <span id="puzzleMovesDisplay" class="stat-value">0</span>
+                </div>
+            </div>
+            <div class="dashboard-stat">
+                <span class="stat-icon">🏆</span>
+                <div class="stat-texts">
+                    <span class="stat-label">BEST MOVES</span>
+                    <span id="puzzleBestMovesDisplay" class="stat-value">--</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Primary Game Canvas Area -->
+        <div class="board-outer-container">
+            <!-- Overlay screens for Pause state or Hint preview -->
+            <div id="boardOverlayMessage" class="board-overlay">
+                <div class="overlay-inner-card">
+                    <span class="overlay-icon">⏸️</span>
+                    <h3>Game Paused</h3>
+                    <p>Take a deep breath. Love is always waiting.</p>
+                    <button class="puzzle-action-btn primary" id="puzzleResumeGameBtn">Resume Memory</button>
+                </div>
+            </div>
+            
+            <!-- Dynamic board loaded via JS script -->
+            <div id="slidingPuzzleGameBoard" class="puzzle-board"></div>
+        </div>
+
+        <!-- Floating action control toolbar -->
+        <div class="puzzle-toolbar">
+            <button class="puzzle-tool-btn" id="puzzleHintToggleBtn" title="Show Numbers">
+                <span class="tool-icon">💡</span>
+                <span class="tool-text">Show Numbers</span>
+            </button>
+            <button class="puzzle-tool-btn" id="puzzlePreviewBtn" title="Hold to Preview Image">
+                <span class="tool-icon">👁️</span>
+                <span class="tool-text">Preview Image</span>
+            </button>
+            <button class="puzzle-tool-btn" id="puzzlePauseToggleBtn" title="Pause Game">
+                <span class="tool-icon">⏸️</span>
+                <span class="tool-text">Pause</span>
+            </button>
+            <button class="puzzle-tool-btn" id="puzzleRestartBtn" title="Reset Current Puzzle">
+                <span class="tool-icon">🔄</span>
+                <span class="tool-text">Restart</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Canvas layer for dynamic interactive custom confetti burst -->
+    <canvas id="puzzleConfettiCanvas" class="puzzle-confetti-canvas"></canvas>
+
+    <!-- Success Completion Popup Screen Overlay -->
+    <div id="puzzleSuccessModal" class="puzzle-modal">
+        <div class="puzzle-modal-content glass-card">
+            <div class="heart-pulse-icon">💖</div>
+            <h2 id="successLevelTitle">Memory Restored!</h2>
+            
+            <div class="star-rating-container" id="successStarsContainer">
+                <span class="success-star">★</span>
+                <span class="success-star">★</span>
+                <span class="success-star">★</span>
+            </div>
+            
+            <div class="success-stats-summary">
+                <p>Completed in <strong id="successTime">00:00</strong> with <strong id="successMoves">0</strong> moves!</p>
+            </div>
+
+            <div class="success-romantic-note-card">
+                <p id="successRomanticQuote" class="success-quote">"With you, every scattered piece of my life fell beautifully into place."</p>
+            </div>
+
+            <div class="success-modal-footer">
+                <button class="puzzle-action-btn primary" id="puzzleSuccessNextLevelBtn">Unlock Next Memory</button>
+                <button class="puzzle-action-btn secondary" id="puzzleSuccessShareBtn">Replay Level</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Level 9 Final Milestone Celebration Overlay -->
+    <div id="puzzleGrandFinaleModal" class="puzzle-modal">
+        <div class="puzzle-modal-content grand-finale-card glass-card">
+            <div class="grand-crown">👑</div>
+            <div class="double-hearts-pulse">❤️✨❤️</div>
+            <h2 class="grand-title">Congratulations!</h2>
+            <p class="grand-subtitle">All 9 Chapters of Our Story Restored</p>
+            
+            <div class="grand-text-box">
+                <p class="romantic-finale-declaration">
+                    "You completed every memory. Every puzzle piece brought us closer. No matter how life shuffles us, we always find our way back together."
+                </p>
+            </div>
+
+            <p class="grand-footer-commitment">To forever, lifetime after lifetime, universe after universe. Happy Anniversary! 💖</p>
+
+            <button class="puzzle-action-btn grand-finale-btn" id="puzzleFinalReturnBtn">Return to OurVerse</button>
+        </div>
+    </div>
+
+    <!-- Quick Preview Full-Screen Image Modal Layer -->
+    <div id="puzzlePreviewModal" class="puzzle-modal flex-modal">
+        <div class="preview-modal-inner">
+            <button class="preview-close-btn" id="closePreviewModalBtn">×</button>
+            <h4 class="preview-label">Complete Memory Preview</h4>
+            <img id="puzzleFullPreviewImg" class="preview-full-image" src="" alt="Complete Preview">
+        </div>
+    </div>
+</div>
+<!-- END OF SLIDING PUZZLE GAME ADDITION -->
+
+
+            <div class="section-header">
+                <button class="back-btn back-to-hub" id="backFromGames">← Back</button>
+                <h2>🎮 Love Games</h2>
+                <p>Play together, laugh together, make more memories.</p>
+            </div>
+            <!-- Comprehensive 6-Button Dynamic Game Action Grid -->
+            <div class="games-grid">
+                <button class="game-card" data-game="memory" aria-label="Launch Memory Match Interface Component">
+                    <span class="game-icon">🧠</span>
+                    <h3>Memory Match</h3>
+                    <p>Match our key milestones together in an interactive card grid format flip test.</p>
+                </button>
+                <button class="game-card" data-game="quiz" aria-label="Launch Relationship Quiz Matrix Module">
+                    <span class="game-icon">❓</span>
+                    <h3>Love Quiz</h3>
+                    <p>How deep runs your memory? Challenge yourself with direct milestones about us!</p>
+                </button>
+                <button class="game-card" data-game="wheel" aria-label="Launch Interactive Love Spin Fortune Wheel">
+                    <span class="game-icon">🎡</span>
+                    <h3>Love Wheel</h3>
+                    <p>Give the vintage custom prize wheel a physical spin for instant romantic rewards.</p>
+                </button>
+                <button class="game-card" data-game="truth" aria-label="Launch Truth Dialogue System Panel">
+                    <span class="game-icon">💬</span>
+                    <h3>Truth Mode</h3>
+                    <p>Access absolute vulnerability. Open the envelope to answer deep candid questions.</p>
+                </button>
+                <button class="game-card" data-game="dare" aria-label="Launch Romantic Dare Challenge System Panel">
+                    <span class="game-icon">🔥</span>
+                    <h3>Romantic Dare</h3>
+                    <p>Step clear out of your comfort zone and execute a highly playful, loving assignment.</p>
+                </button>
+                <button class="game-card" data-game="gift" aria-label="Launch Dynamic Gift Mini Game Mechanics">
+                    <span class="game-icon">🎁</span>
+                    <h3>Lucky Prize Gift</h3>
+                    <p>Test your fate across moving boxes to see if you unlock premium digital hidden keys.</p>
+                </button>
+            </div>
+        </section>
+        <!-- =========================================
+             PHASE 6.1: INTEGRATED MEMORY MATCH GAME
+        ========================================= -->
+  
+<!--
+ =========================================
+             PHASE 7: CELESTIAL CANVAS STAR MAP WINDOW
+        ========================================= -->
+        <section id="starMapSection" class="star-map-section sub-panel" hidden>
+            <div class="section-header">
+                <button class="back-btn back-to-hub" id="backFromStarMap">← Back</button>
+                <h2>🌌 Our Star Map</h2>
+                <p>The sky looked different because it knew our story had begun.</p>
+            </div>
+            <!-- Immersive Core Canvas Rendering Frame Container Layout -->
+            <div class="star-map-card">
+                <canvas id="starCanvas"></canvas>
+                <div class="star-overlay">
+                    <h3>⭐ The Night We Met</h3>
+                    <p>This sky will always remind me of us.</p>
+                </div>
+            </div>
+            <!-- Star Interactive Animation Controller Elements -->
+            <div class="star-actions">
+                <button id="animateStarsBtn" class="primary-btn">✨ Make A Wish</button>
+            </div>
+        </section>
+        <!-- =========================================
+             PHASE 8: VAULT REVEAL DIGITAL SURPRISE BOX
+        ========================================= -->
+        <section id="surpriseSection" class="surprise-section sub-panel" hidden>
+            <div class="section-header">
+                <button class="back-btn back-to-hub" id="backFromSurprise">← Back</button>
+                <h2>🎁 One Last Surprise</h2>
+                <p>Open only when your heart is ready.</p>
+            </div>
+            <!-- Fully Functional Multi-Node Interactive Box Wrapper Frame Structure -->
+            <div class="surprise-container">
+                <div id="giftBox" class="gift-box" role="button" tabindex="0" aria-label="Interactive Surprise Gift Box Chest Wrapper">
+                    <div class="gift-lid"></div>
+                    <div class="gift-body">🎁</div>
+                </div>
+                <button id="openGiftBtn" class="primary-btn">Open My Gift ❤️</button>
+            </div>
+        </section>
+        <!-- Final Luxury Unlocked Content Backdrop Popup Modal View -->
+        <div id="giftReveal" class="media-viewer" hidden role="dialog" aria-modal="true" aria-labelledby="finalAnniversaryTitle">
+            <article class="gift-content">
+                <h2 id="finalAnniversaryTitle"><h2 class="anniversary-title">❤️ Happy Anniversary, My Love ❤️</h2>
+
+<p class="anniversary-message">
+    Every day with you has become one of my favorite memories.
+    Thank you for being the person I can always come home to,
+    the one who makes ordinary moments feel so special,
+    and the reason my heart smiles a little more every single day.
+    <br><br>
+
+    Thank you for your patience, your kindness, your endless care,
+    and for loving me even on the days I'm not at my best.
+    You make me feel safe, understood, and truly loved in ways I never knew were possible.
+    <br><br>
+
+    No matter where life takes us, I hope we keep laughing together,
+    supporting each other, making beautiful memories,
+    and choosing each other every single day.
+    <br><br>
+
+    I love you more than I could ever fit into words,
+    and I'll never stop being grateful that you're mine.
+    <br><br>
+
+    Happy Anniversary, my love. ❤️
+</p>
+                <button id="closeGiftReveal" class="primary-btn">Close ❤️</button>
+            </article>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
